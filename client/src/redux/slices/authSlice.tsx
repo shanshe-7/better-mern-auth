@@ -43,6 +43,8 @@ export const fetchSecretResours = createAsyncThunk(
         authorization: localStorage.getItem('token'),
       },
     });
+    console.log(response);
+
     return response;
   }
 );
