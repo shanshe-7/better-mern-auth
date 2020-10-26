@@ -11,7 +11,7 @@ const cors = require('cors');
 const app = express();
 
 // Connection to database
-mongoose.connect(process.env.MONGODB_URI || dbURL, {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
