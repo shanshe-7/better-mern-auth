@@ -22,10 +22,7 @@ export interface signInData {
 export const signIn = createAsyncThunk(
   'users/signin',
   async (data: signInData) => {
-    const response = await axios.post(
-      'https://mernauthapp.herokuapp.com/signin',
-      data
-    );
+    const response = await axios.post('http://localhost:3090/signin', data);
     return response;
   }
 );
@@ -33,10 +30,7 @@ export const signIn = createAsyncThunk(
 export const signUp = createAsyncThunk(
   'users/signup',
   async (data: signUpData) => {
-    const response = await axios.post(
-      'https://mernauthapp.herokuapp.com/signup',
-      data
-    );
+    const response = await axios.post('http://localhost:3090/signup', data);
     return response;
   }
 );
@@ -44,14 +38,11 @@ export const signUp = createAsyncThunk(
 export const fetchSecretResours = createAsyncThunk(
   'users/fetchSecretResours',
   async () => {
-    const response = await axios.get(
-      'https://mernauthapp.herokuapp.com/secret',
-      {
-        headers: {
-          authorization: localStorage.getItem('token'),
-        },
-      }
-    );
+    const response = await axios.get('http://localhost:3090/secret', {
+      headers: {
+        authorization: localStorage.getItem('token'),
+      },
+    });
     return response;
   }
 );
