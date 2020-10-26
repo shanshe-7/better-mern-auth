@@ -23,6 +23,10 @@ app.use(cors());
 app.use(bodyParser.json());
 router(app);
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
+
 // Server setup
 const port = process.env.PORT || 3090;
 app.listen(port);
