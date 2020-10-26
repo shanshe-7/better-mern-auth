@@ -2,9 +2,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
-const router = require('./server/router/router');
+const router = require('./router/router');
 const mongoose = require('mongoose');
-const { dbURL } = require('./server/config');
+const { dbURL } = require('./config');
 const cors = require('cors');
 
 // Instance of express
